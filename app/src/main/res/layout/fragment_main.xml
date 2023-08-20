@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".presentation.main.MainFragment">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/getobjects"
+        android:text="GetObjects"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24sp"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/getObjectById"
+        android:text="Get Object By Id"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24sp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/getObjectsById"
+        android:text="Get objects by isd"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24sp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addObject"
+        android:text="Add object"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24sp"
+        />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
