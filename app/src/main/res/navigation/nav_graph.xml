@@ -11,9 +11,9 @@
         android:label="fragment_getobjects"
         tools:layout="@layout/fragment_getobjectall" />
     <fragment
-        android:id="@+id/loginFragment"
+        android:id="@+id/singleFragment"
         android:name="com.jama.clean.presentation.single.SingleFragment"
-        android:label="fragment_login"
+        android:label="fragment_single"
         tools:layout="@layout/fragment_single" />
     <fragment
         android:id="@+id/mainFragment"
@@ -21,10 +21,18 @@
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_mainFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_mainFragment_to_singleFragment"
+            app:destination="@id/singleFragment" />
         <action
             android:id="@+id/action_mainFragment_to_getobjectsFragment"
             app:destination="@id/getobjectsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addObjectFragment"
+            app:destination="@id/addObjectFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/addObjectFragment"
+        android:name="com.jama.clean.presentation.addObject.AddObjectFragment"
+        android:label="fragment_add_object"
+        tools:layout="@layout/fragment_add_object" />
 </navigation>

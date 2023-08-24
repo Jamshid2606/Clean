@@ -9,7 +9,7 @@ import com.jama.clean.databinding.ItemObjectBinding
 import com.jama.clean.domain.getObjectAll.models.ObjectTypeData
 import okhttp3.internal.notify
 
-class GetObjectAllAdapter():RecyclerView.Adapter<GetObjectAllAdapter.MyViewHolder>() {
+class GetObjectAllAdapter :RecyclerView.Adapter<GetObjectAllAdapter.MyViewHolder>() {
     private val list = ArrayList<ObjectTypeData>()
     fun setData(list: List<ObjectTypeData>){
         this.list.clear()

@@ -1,31 +1,32 @@
-package com.jama.clean.presentation.single
+package com.jama.clean.presentation.addObject
 
-import android.util.Log
+import androidx.lifecycle.ViewModelProvider
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.jama.clean.BaseFragment
-import com.jama.clean.databinding.FragmentSingleBinding
-import com.jama.clean.domain.getObjectAll.models.ObjectTypeData
+import com.jama.clean.R
+import com.jama.clean.databinding.FragmentAddObjectBinding
+import com.jama.clean.domain.addObject.models.AddObjectData
 import com.jama.clean.domain.singleObject.models.SingleObjectTypeData
-import com.jama.clean.presentation.getObjectAll.GetObejectAllState
+import com.jama.clean.presentation.single.GetSingleObjectState
+import com.jama.clean.presentation.single.SingleViewModel
 import com.jama.clean.presentation.utils.gone
 import com.jama.clean.presentation.utils.visible
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
-@AndroidEntryPoint
-class SingleFragment : BaseFragment<FragmentSingleBinding>(FragmentSingleBinding::inflate) {
-    private val viewModel : SingleViewModel by viewModels()
+class AddObjectFragment : BaseFragment<FragmentAddObjectBinding>(FragmentAddObjectBinding::inflate) {
+    private val viewModel : AddObjectViewModel by viewModels()
     override fun onViewCreate() {
         observer()
-        binding.getUser.setOnClickListener {
-            val id = binding.idEt.text.toString()
-            viewModel.getSingleObject(id = id.toInt())
-        }
     }
     private fun observer() {
         viewModel.state
@@ -35,22 +36,21 @@ class SingleFragment : BaseFragment<FragmentSingleBinding>(FragmentSingleBinding
             }
             .launchIn(lifecycleScope)
     }
-    private fun handleStateChange(state: GetSingleObjectState){
+    private fun handleStateChange(state: AddObjectState){
         when(state){
-            is GetSingleObjectState.SuccessGetObejectAll->{handleSuccessLogin(state.data)}
-            is GetSingleObjectState.ErrorGetObejectAll->{handleErrorLogin(state.error)}
-            is GetSingleObjectState.IsLoading->{handleLoading(state.isLoading)}
-            is GetSingleObjectState.ShowToast->{showToast(state.message)}
-            is GetSingleObjectState.Init->Unit
+            is AddObjectState.SuccessObjectAll->{handleSuccessLogin(state.data)}
+            is AddObjectState.ErrorObjectAll->{handleErrorLogin(state.error)}
+            is AddObjectState.IsLoading->{handleLoading(state.isLoading)}
+            is AddObjectState.ShowToast->{showToast(state.message)}
+            is AddObjectState.Init->Unit
         }
     }
-
     private fun handleErrorLogin(error:String){
         Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
         handleLoading(false)
     }
-    private fun handleSuccessLogin(data: SingleObjectTypeData){
-        binding.resultText.text = "ID:" + data.id + "\n" + "NAME:" + data.name
+    private fun handleSuccessLogin(data: AddObjectData){
+//        binding.resultText.text = "ID:" + data.id + "\n" + "NAME:" + data.name
         handleLoading(false)
     }
     private fun showToast(message:String){

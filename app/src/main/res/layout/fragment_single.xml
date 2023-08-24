@@ -7,35 +7,33 @@
     android:gravity="center"
     tools:context=".presentation.single.SingleFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text="Sign In"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        />
     <EditText
-        android:id="@+id/email_et"
+        android:id="@+id/idEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
-    <EditText
-        android:id="@+id/password_et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:hint="Id"
+        android:gravity="center"
+        android:textSize="18sp"
         />
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/login_btn"
+        android:id="@+id/getUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Get User"
         />
+
     <ProgressBar
         android:visibility="gone"
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:layout_marginTop="20dp"
         />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
