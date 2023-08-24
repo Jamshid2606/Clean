@@ -12,5 +12,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
         binding.getObjectById.setOnClickListener {
             navController.navigate(R.id.action_mainFragment_to_singleFragment)
         }
+        binding.addObject.setOnClickListener {
+            navController.navigate(R.id.action_mainFragment_to_addObjectFragment)
+        }
     }
 }

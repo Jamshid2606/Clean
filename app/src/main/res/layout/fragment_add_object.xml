@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
     tools:context=".presentation.addObject.AddObjectFragment">
 
-    <TextView
+    <EditText
+        android:id="@+id/etName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
-
-</FrameLayout>
+        android:layout_height="wrap_content"
+        android:hint="NAME"
+        />
+    <EditText
+        android:id="@+id/etYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Year"
+        />
+    <EditText
+        android:id="@+id/etCost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="COST"
+        android:inputType="number"
+        />
+    <EditText
+        android:id="@+id/cpuModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CPU MODEL"
+        />
+    <EditText
+        android:id="@+id/hard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hard disk size"
+        />
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD"
+        />
+</androidx.appcompat.widget.LinearLayoutCompat>

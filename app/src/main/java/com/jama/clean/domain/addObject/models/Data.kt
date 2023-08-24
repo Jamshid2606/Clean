@@ -3,5 +3,5 @@ data class Data(
     val CPUModel: String,
     val HardDiskSize: String,
     val price: Double,
-    val year: Int
+    val year: String
 )

@@ -34,5 +34,9 @@
         android:id="@+id/addObjectFragment"
         android:name="com.jama.clean.presentation.addObject.AddObjectFragment"
         android:label="fragment_add_object"
-        tools:layout="@layout/fragment_add_object" />
+        tools:layout="@layout/fragment_add_object" >
+        <action
+            android:id="@+id/action_addObjectFragment_to_getobjectsFragment"
+            app:destination="@id/getobjectsFragment" />
+    </fragment>
 </navigation>
